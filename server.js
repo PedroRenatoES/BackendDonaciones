@@ -81,7 +81,7 @@ app.use('/api/donacionesRopa', donacionesRopaRoutes);
 app.use('/api/solicitudesRecoleccion', solicitudesRecoleccion);
 app.use('/api/paquetes', paquetes)
 app.use('/api/reportes', reportes)
-app.use('/api/imagenes-campanas   ', imagenesCampanasRoutes)
+app.use('/api/imagenes-campanas', imagenesCampanasRoutes)
 app.use('/api/imagenes-ci', imagenesCiRoutes);
 
 poolPromise.then(pool => {
