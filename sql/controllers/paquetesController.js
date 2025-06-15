@@ -33,6 +33,32 @@ class PaquetesController {
       res.status(500).json({ error: 'Error obteniendo paquetes' });
     }
   }
+  static async getAllEnviados(req, res) {
+    try {
+      const paquetes = await PaquetesModel.getAllEnviados();
+      res.json(paquetes);
+    } catch (error) {
+      console.error('Error al obtener paquetes enviados:', error);
+      res.status(500).json({ error: 'Error al obtener paquetes con estado 1' });
+    }
+  }
+
+  static async marcarComoEnviado(req, res) {
+  try {
+    const { id_paquete } = req.body;
+    if (!id_paquete) {
+      return res.status(400).json({ error: 'Falta el ID del paquete' });
+    }
+
+    await PaquetesModel.marcarComoEnviado(id_paquete);
+    res.json({ message: 'Paquete marcado como enviado (estado = 1)' });
+  } catch (error) {
+    console.error('Error al marcar paquete como enviado:', error);
+    res.status(500).json({ error: 'Error al actualizar el estado del paquete' });
+  }
+}
+
+  
 
   // GET /paquetes/:id
   static async getById(req, res) {
