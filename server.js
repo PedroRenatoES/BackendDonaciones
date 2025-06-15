@@ -30,6 +30,8 @@ const paquetes = require('./sql/routes/paquetesRoutes.js')
 const reportes = require('./sql/routes/reportesRoutes.js')
 const imagenesCampanasRoutes = require('./mongo/routes/imagenesCampanasRoutes.js');
 const imagenesCiRoutes = require('./mongo/routes/imagenesCiRoutes.js');
+const salidasAlmacenRoutes = require('./sql/routes/salidasAlmacenRoutes.js');
+
 
 const PORT = 3000;
 const app = express();
@@ -83,6 +85,7 @@ app.use('/api/paquetes', paquetes)
 app.use('/api/reportes', reportes)
 app.use('/api/imagenes-campanas', imagenesCampanasRoutes)
 app.use('/api/imagenes-ci', imagenesCiRoutes);
+app.use('/api/salidas-almacen', salidasAlmacenRoutes);
 
 poolPromise.then(pool => {
   app.listen(PORT, () => {
