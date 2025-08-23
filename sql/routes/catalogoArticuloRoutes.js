@@ -4,7 +4,7 @@ const authenticateToken = require('../../middleware/authMiddleware');
 
 const router = express.Router();
 
-router.get('/', authenticateToken, CatalogoDeArticuloController.getAll);
+router.get('/', CatalogoDeArticuloController.getAll);
 router.get('/:id', authenticateToken, CatalogoDeArticuloController.getById);
 router.get('/categoria/:id_categoria', authenticateToken, CatalogoDeArticuloController.getByCategoria);
 router.post('/', authenticateToken, CatalogoDeArticuloController.create);
