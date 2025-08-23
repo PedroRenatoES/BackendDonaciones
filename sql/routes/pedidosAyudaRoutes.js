@@ -4,10 +4,10 @@ const authenticateToken = require('../../middleware/authMiddleware');
 
 const router = express.Router();
 
-router.get('/', authenticateToken, PedidosDeAyudaController.getAll);
-router.get('/:id', authenticateToken, PedidosDeAyudaController.getById);
-router.post('/', authenticateToken, PedidosDeAyudaController.create);
-router.put('/:id', authenticateToken, PedidosDeAyudaController.update);
-router.delete('/:id', authenticateToken, PedidosDeAyudaController.delete);
+router.get('/', PedidosDeAyudaController.getAll);
+router.get('/:id', PedidosDeAyudaController.getById);
+router.post('/', PedidosDeAyudaController.create);
+router.put('/:id', PedidosDeAyudaController.update);
+router.delete('/:id', PedidosDeAyudaController.delete);
 
 module.exports = router;
