@@ -4,8 +4,8 @@ const authenticateToken = require('../../middleware/authMiddleware');
 
 const router = express.Router();
 
-router.get('/', authenticateToken, PedidosDeAyudaController.getAll);
-router.get('/:id', authenticateToken, PedidosDeAyudaController.getById);
+router.get('/', PedidosDeAyudaController.getAll);
+router.get('/:id', PedidosDeAyudaController.getById);
 router.post('/', PedidosDeAyudaController.create);
 router.put('/:id', authenticateToken, PedidosDeAyudaController.update);
 router.delete('/:id', authenticateToken, PedidosDeAyudaController.delete);
