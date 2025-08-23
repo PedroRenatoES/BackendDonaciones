@@ -5,8 +5,8 @@ const authenticateToken = require('../../middleware/authMiddleware');
 const router = express.Router();
 
 router.get('/bajo-stock/:idAlmacen', DonacionesEnEspecieController.getBajoStockPorAlmacen);
-router.get('/', authenticateToken, DonacionesEnEspecieController.getAll);
-router.get('/:id', authenticateToken, DonacionesEnEspecieController.getById);
+router.get('/', DonacionesEnEspecieController.getAll);
+router.get('/:id', DonacionesEnEspecieController.getById);
 router.get('/por-donante/:id', authenticateToken, DonacionesEnEspecieController.getByDonanteId);
 router.get('/por-campana/:id_campana', authenticateToken, DonacionesEnEspecieController.getByCampanaId);
 router.get('/donantes-por-articulo/:id', DonacionesEnEspecieController.getDonantesPorArticulo);
